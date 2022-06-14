@@ -1,0 +1,27 @@
+{
+  "extends": "solhint:recommended",
+  "rules": {
+      "quotes": ["error", "double"],
+      "max-line-length": ["warn", 120],
+      "const-name-snakecase": "warn",
+      "avoid-suicide": "error",
+      "avoid-throw": "warn",
+      "ordering" : "warn",
+      "not-rely-on-time" : "warn",
+      "code-complexity": "warn",
+      "reentrancy": "warn",
+      "function-max-lines": ["warn", 6],
+      "max-states-count": ["warn",15],
+      "contract-name-camelcase": "warn",
+      "event-name-camelcase": "warn",
+      "func-name-mixedcase": "warn",
+      "modifier-name-mixedcase": "warn",
+      "visibility-modifier-order": "error",
+      "private-vars-leading-underscore": ["error",{"strict":false}],
+      "state-visibility": "warn",
+      "func-param-name-mixedcase": "warn",
+      "var-name-mixedcase": "warn",
+      "imports-on-top": "warn",
+      "compiler-version": ["error","^0.8.14"]
+  }
+}
