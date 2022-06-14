@@ -17,4 +17,12 @@ contract MyNFTToken is ERC721 {
         _myToken.transferFrom(msg.sender, address(this), _price);
         _safeMint(to, tokenId);
     }
+
+    function mintNTokens(address to, uint tokenId, uint n) public {
+        uint totalPrice = n * _price;
+        _myToken.transferFrom(msg.sender, address(this), totalPrice);
+        for (uint256 index = 0; n < index; index++) {
+            _mint(to, tokenId);
+        }
+    }
 }

@@ -10,11 +10,20 @@ contract MyERC20Token is ERC20 {
 
     address public stackingAddress;
 
-    constructor(address _stackingAddress) ERC20("MyERC20Token", "MET") {
+    constructor() ERC20("MyERC20Token", "MET") {}
+
+    /* constructor(address _stackingAddress) ERC20("MyERC20Token", "MET") {
         stackingAddress = _stackingAddress;
-    }
+    } */
 
     function mint(address to, uint256 amount) public {
+        require(amount <= maxTokensPerMint, "max amount exceed");
+        require(hasMinted[to] == false, "has minted");
+        _mint(to, amount);
+        hasMinted[to] = true;
+    }
+
+    /** 
         if (msg.sender == stackingAddress) {
             _mint(to, amount);
         } else {
@@ -23,5 +32,5 @@ contract MyERC20Token is ERC20 {
             _mint(to, amount);
             hasMinted[to] = true;
         }
-    }
+    */
 }
